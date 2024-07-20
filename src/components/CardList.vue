@@ -1,7 +1,8 @@
 <script setup>
 import Card from './Card.vue'
 defineProps({
-  items: Array
+  items: Array,
+  addToFavorite: Function
 })
 const onClickAdd = () => {
   alert(111)
@@ -16,8 +17,9 @@ const onClickFavorite = () => {}
       :title="item.title"
       :imageUrl="item.imageUrl"
       :price="item.price"
+      :isFavorite="item.isFavorite"
       :onClickAdd="onClickAdd"
-      :onClickFavorite="onClickFavorite"
+      :onClickFavorite="addToFavorite"
     />
   </div>
 </template>
